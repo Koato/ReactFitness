@@ -1,5 +1,4 @@
 import React from "react";
-import exerciseIMG from "../images/exercise.png";
 import circlesIMG from "../images/circles.png";
 import './styles/Card.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -13,11 +12,21 @@ class Card extends React.Component {
         }
     }
 
+    componentDidMount() {
+        // una vez que se ha terminado de cargar la aplicacion
+        setTimeout(() => {
+            this.setState({
+                imagen: 'https://firebasestorage.googleapis.com/v0/b/tutoriales-e4830.appspot.com/o/exercise.png?alt=media&token=b9c4b236-16a9-4a56-bba2-90c9660a0f06'
+            })
+        }, 5000)
+    }
+
     render() {
         // atajo a la informacion pasada
         const { title, description, img, leftColor, rightColor } = this.props;
         // contenido que se muestra en la ventana
         return (
+            // solo retorna un solo valor
             <div className="card mx-auto Fitness-Card" style={{
                 backgroundImage: `url({${circlesIMG}}), linear-gradient(to right, ${leftColor}, ${rightColor})`
             }}>
