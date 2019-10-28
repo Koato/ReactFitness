@@ -1,9 +1,7 @@
-import React, { Component, Fragment } from 'react';
-import Welcome from "../Welcome";
-import ExcerciseList from "../ExcerciseList";
-import Button from '../Button';
+import React, { Component } from 'react';
 import Loading from "../Loading/Loading";
-import FatalError from "../pages/500";
+import FatalError from "./500";
+import Exercises from "./Exercises";
 
 class Excercises extends Component {
     state = {
@@ -44,11 +42,7 @@ class Excercises extends Component {
             return <FatalError />;
         }
         return (
-            <Fragment>
-                <Welcome name="Andy" />
-                <ExcerciseList ejemplos={this.state.data} />
-                <Button />
-            </Fragment>
+            <Exercises data={this.state.data} />
         );
     }
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Excercises from "../Components/pages/Excercises";
-import ExcercisesNew from "../Components/pages/ExcercisesNew";
-import NotFound from "../Components/pages/400";
+import Excercises from "./pages/ExcercisesContainer";
+import ExcercisesNew from "./pages/ExcercisesNewContainer";
+import NotFound from "./pages/400";
 
 const App = () => (
     <BrowserRouter>
