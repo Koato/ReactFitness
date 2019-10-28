@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Card from "../Components/Card";
 
 const ExcerciseList = ({ ejemplos }) => (
-    <div>
+    <Fragment>
         {
             ejemplos.map((ejercicio) => {
                 return (<Card key={ejercicio.id} title={ejercicio.title}
@@ -12,7 +12,7 @@ const ExcerciseList = ({ ejemplos }) => (
                     rightColor={ejercicio.rightColor} />);
             })
         }
-    </div>
+    </Fragment>
 )
 
 export default ExcerciseList;

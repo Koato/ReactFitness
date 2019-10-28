@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Welcome from "../Welcome";
 import ExcerciseList from "../ExcerciseList";
 import Button from '../Button';
@@ -44,11 +44,11 @@ class Excercises extends Component {
             return <FatalError />;
         }
         return (
-            <div>
+            <Fragment>
                 <Welcome name="Andy" />
                 <ExcerciseList ejemplos={this.state.data} />
                 <Button />
-            </div>
+            </Fragment>
         );
     }
 }
