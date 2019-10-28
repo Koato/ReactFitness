@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Excercises from "../Components/pages/Excercises";
 import ExcercisesNew from "../Components/pages/ExcercisesNew";
-import NotFound from "../Components/pages/NotFound";
+import NotFound from "../Components/pages/400";
 
 const App = () => (
     <BrowserRouter>
