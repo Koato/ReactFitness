@@ -5,11 +5,7 @@ const ExcerciseList = ({ ejemplos }) => (
     <Fragment>
         {
             ejemplos.map((ejercicio) => {
-                return (<Card key={ejercicio.id} title={ejercicio.title}
-                    description={ejercicio.description}
-                    img={ejercicio.img}
-                    leftColor={ejercicio.leftColor}
-                    rightColor={ejercicio.rightColor} />);
+                return (<Card key={ejercicio.id} {...ejercicio} />);
             })
         }
     </Fragment>

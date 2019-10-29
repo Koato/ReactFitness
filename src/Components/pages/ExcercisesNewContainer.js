@@ -1,6 +1,7 @@
 import React from "react";
 import FatalError from "./500";
 import ExercisesNew from "./ExercisesNew";
+import configuracionGlobal from "../config";
 import "../styles/ExerciseNew.css";
 
 class ExcercisesNewContainer extends React.Component {
@@ -47,7 +48,7 @@ class ExcercisesNewContainer extends React.Component {
                 body: JSON.stringify(this.state.form)
             }
             //indico el medio de la solicitud, sino lo indico sera GET
-            let respuesta = await fetch('http://localhost:8000/api/exercises', configuracion);
+            let respuesta = await fetch(`${configuracionGlobal}/exercises`, configuracion);
             //obtengo la respuesta de la url en json
             let json = await respuesta.json();
             //termino la interactividad con el usuario
