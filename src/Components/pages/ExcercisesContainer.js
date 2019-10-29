@@ -1,35 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Loading from "../Loading/Loading";
 import FatalError from "./500";
 import Exercises from "./Exercises";
-import Example from "./Example";
+// incorporar el hook personalizado
+import useFetch from "../Hooks/useFetch";
 
 const ExcercisesContainer = () => {
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        //ejecucion despues de renderizar
-        const getExercises = async () => {
-            try {
-                //obtengo el contenido de la url
-                let url = await fetch('http://localhost:8000/api/exercises');
-                //lo convierto a json
-                let resultado = await url.json();
-
-                //seteo el resultado en el estado
-                setData(resultado);
-                setLoading(false);
-            } catch (error) {
-                //seteo el resultado en el estado
-                setLoading(false);
-                setError(error);
-            }
-        }
-        // llamada de la funcion a ejecutar
-        getExercises();
-    }, []);
+    const { data, loading, error } = useFetch('http://localhost:8000/api/exercises');
 
     if (loading) {
         return <Loading />;
